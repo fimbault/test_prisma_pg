@@ -86,9 +86,10 @@ You may also connect using any postgres client.
 
 
 
-### Issue with .env 
+### Alternative with .env 
 
-When we try to use a .env (that contains DATABASE_URL) and try to use the value in schema.prisma, it doesn't work.
+Define the following inside .env:
+`DATABASE_URL=postgresql://u1:p1@localhost:5432/prisma?schema=public`
 
 ```
 datasource db {
@@ -96,7 +97,3 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 ```
-
-The error message is strange: 
-
-P1000: Authentication failed against database server at `localhost`, the provided database credentials for `johndoe` are not valid.
