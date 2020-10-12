@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:13.0
+    restart: always
+    container_name: "prisma_pg_1"
+    environment:
+      - POSTGRES_USER=u1
+      - POSTGRES_PASSWORD=p1
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+volumes:
+  postgres:
