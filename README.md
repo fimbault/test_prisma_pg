@@ -37,7 +37,7 @@ Creating prisma_pg_1 ... done
 
 
 
-To check that it works, you may check the processes running on docker (using: docker ps) or try to connect to the postgres instance. For instance with tableplus or psql (requires psql -d "host=localhost port=5432 dbname=<dbname> user=u1")
+To check that it works, you may check the processes running on docker (using: docker ps) or try to connect to the postgres instance. For instance with tableplus or psql.
 
 ![](./doc/checkinstall.png)
 
@@ -85,7 +85,6 @@ You may also connect using any postgres client.
 ![prisma database](./doc/prismadb.png)
 
 
-
 ### Alternative with .env 
 
 Define the following inside .env:
@@ -97,3 +96,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 ```
+
+
+### Issues with migrations
+Sometimes there can be errors when trying to migrate (especially if copying from another database).
+
+To fix the issue: we'll connect through psql for instance (requires packages  postgresql-client-common and postgresql-client-13)
+```
+psql -d "host=localhost port=5432 dbname=prisma user=u1"
+```
+
+Connect with psql
+```
+$ select count(*) from "_Migration";
+$ TRUNCATE "_Migration";
+```
+
+Delete the migrations directory
+```
+rm -rf migrations
+```
+
+And now you can start again the migration.

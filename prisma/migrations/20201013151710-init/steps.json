@@ -25,11 +25,11 @@
     },
     {
       "tag": "CreateModel",
-      "model": "member"
+      "model": "test"
     },
     {
       "tag": "CreateField",
-      "model": "member",
+      "model": "test",
       "field": "id",
       "type": "Int",
       "arity": "Required"
@@ -39,7 +39,7 @@
       "location": {
         "path": {
           "tag": "Field",
-          "model": "member",
+          "model": "test",
           "field": "id"
         },
         "directive": "default"
@@ -51,7 +51,7 @@
         "tag": "Directive",
         "path": {
           "tag": "Field",
-          "model": "member",
+          "model": "test",
           "field": "id"
         },
         "directive": "default"
@@ -64,7 +64,7 @@
       "location": {
         "path": {
           "tag": "Field",
-          "model": "member",
+          "model": "test",
           "field": "id"
         },
         "directive": "id"
@@ -72,7 +72,7 @@
     },
     {
       "tag": "CreateField",
-      "model": "member",
+      "model": "test",
       "field": "name",
       "type": "String",
       "arity": "Required"
