@@ -30,14 +30,14 @@ volumes:
 Then launch the database: 
 
 ```
-$ docker compose up -d
+$ docker-compose up -d
 Creating network "pgdocker_default" with the default driver
 Creating prisma_pg_1 ... done
 ```
 
 
 
-To check that it works, you may check the processes running on docker (using: docker ps) or try to connect to the postgres instance. For instance with tableplus.
+To check that it works, you may check the processes running on docker (using: docker ps) or try to connect to the postgres instance. For instance with tableplus or psql (requires psql -d "host=localhost port=5432 dbname=<dbname> user=u1")
 
 ![](./doc/checkinstall.png)
 
