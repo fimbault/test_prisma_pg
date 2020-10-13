@@ -103,18 +103,18 @@ Sometimes there can be errors when trying to migrate (especially if copying from
 
 To fix the issue: we'll connect through psql for instance (requires packages  postgresql-client-common and postgresql-client-13)
 ```
-psql -d "host=localhost port=5432 dbname=prisma user=u1"
+$ psql -d "host=localhost port=5432 dbname=prisma user=u1"
 ```
 
 Connect with psql
 ```
-$ select count(*) from "_Migration";
-$ TRUNCATE "_Migration";
+> select count(*) from "_Migration";
+> TRUNCATE "_Migration";
 ```
 
 Delete the migrations directory
 ```
-rm -rf migrations
+$ rm -rf migrations
 ```
 
 And now you can start again the migration.
